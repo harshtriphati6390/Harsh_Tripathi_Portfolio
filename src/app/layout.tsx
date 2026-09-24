@@ -21,6 +21,7 @@ const sora = Sora({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("http://localhost:3000"),
   title: "Harsh Tripathi | Full-Stack Developer · Data Analyst · SEO Specialist",
   description:
     "Portfolio of Harsh Tripathi — B.Tech CSE graduate (2026) from Noida, India. Building across the full stack: React, Node.js, FastAPI, SQL, Power BI and technical SEO.",

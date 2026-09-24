@@ -1,7 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-node_modules
+node_modules/
 /.pnp
 .pnp.*
 .yarn/*
@@ -30,25 +30,42 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
-.env*
+# env files — do NOT commit secrets
+.env
+.env.*
+.env.local
+.env.production
 
 # vercel
 .vercel
-
 
 # typescript
 *.tsbuildinfo
 next-env.d.ts
 local-*
+
+# internal tooling / platform scripts (not needed on GitHub)
 .claude
 .z-ai-config
+.zscripts/
+Caddyfile
+download/
+examples/
+mini-services/
+tests/
+scripts/generate_resume.py
+
+# logs
 *.log
 dev.log
 dev.out.log
-test
+server.log
 prompt
 
-server.log
+# sqlite database (not committed — use cloud DB on production)
+db/*.db
+db/*.db-shm
+db/*.db-wal
+
 # Skills directory
 /skills/
