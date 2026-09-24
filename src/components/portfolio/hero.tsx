@@ -56,7 +56,7 @@ function useTypewriter(words: readonly string[], speed = 75, pause = 1600) {
 const floatBadges = [
   { icon: Braces, label: "React + Node", className: "-left-4 top-8 sm:-left-8", delay: "animate-float" },
   { icon: BarChart3, label: "Power BI + DAX", className: "-right-3 top-1/3 sm:-right-8", delay: "animate-float-delayed" },
-  { icon: Search, label: "Technical SEO", className: "left-2 -bottom-5", delay: "animate-float" },
+  { icon: Search, label: "Technical SEO", className: "-left-4 bottom-16", delay: "animate-float" },
 ];
 
 export function Hero() {
@@ -158,11 +158,11 @@ export function Hero() {
             <div className="relative overflow-hidden rounded-[2rem] border border-primary/25 bg-card shadow-[0_24px_80px_-24px_rgba(139,92,246,0.5)]">
               <Image
                 src={profile.avatar}
-                alt="Illustrated portrait of Harsh Tripathi"
-                width={864}
-                height={1152}
+                alt="Photo of Harsh Tripathi — B.Tech CSE graduate"
+                width={640}
+                height={640}
                 priority
-                className="h-auto w-full object-cover"
+                className="aspect-[3/4] w-full object-cover object-top"
               />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background/95 via-background/60 to-transparent p-4 pt-10">
                 <p className="font-display text-sm font-bold sm:text-base">{profile.name}</p>

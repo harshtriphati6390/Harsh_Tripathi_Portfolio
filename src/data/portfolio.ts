@@ -21,7 +21,7 @@ export const profile = {
   phone: "+91-6390503738",
   github: "https://github.com/harshtriphati6390",
   linkedin: "https://www.linkedin.com/in/harsh-tripathi-2ab741330",
-  avatar: "/images/harsh-avatar.png",
+  avatar: "/images/harsh-photo.jpg",
   resumeUrl: "/resume/Harsh_Tripathi_Resume.pdf",
   openToWork: "Open to Software Developer, Data Analyst & SEO roles",
 } as const;

@@ -37,13 +37,14 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Harsh Tripathi" }],
   icons: {
-    icon: "/images/harsh-avatar.png",
+    icon: "/images/harsh-photo.jpg",
   },
   openGraph: {
     title: "Harsh Tripathi | Portfolio",
     description:
       "CS graduate building across the whole stack — web apps, data analytics and SEO.",
     type: "website",
+    images: [{ url: "/images/harsh-photo.jpg", width: 640, height: 640, alt: "Harsh Tripathi" }],
   },
 };
 

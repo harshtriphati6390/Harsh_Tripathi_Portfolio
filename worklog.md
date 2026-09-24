@@ -23,3 +23,21 @@ Stage Summary:
 - Sections: Navbar · Hero (typing roles, stats, ticker) · About (terminal, live status, milestone, 3 discipline cards) · Skills (6 tracks) · Projects (4 with filter) · Journey (timeline, certs, education, languages) · Contact (working form → API → DB) · sticky Footer.
 - Key decisions: umangpandey.in visual blueprint respected (violet+amber on dark navy); dark-only theme; content centralized in src/data/portfolio.ts for easy edits; contact API + Prisma persistence for form messages; graduation widget gracefully handles both pre/post-graduation dates.
 - Assets: /images/*.png (5 AI-generated), /resume/Harsh_Tripathi_Resume.pdf (generated).
+
+---
+Task ID: 2
+Agent: Z.ai Code (main orchestrator)
+Task: Add the real photo of Harsh Tripathi (uploaded IMG-20260329-WA0001.jpg.jpeg) to the portfolio, replacing the AI-generated avatar.
+
+Work Log:
+- Upload folder was empty at runtime; retrieved the exact photo via the CDN URL attached to the user's message and saved it to public/images/harsh-photo.jpg (640x640 JPEG, verified visually — professional headshot, navy shirt).
+- Updated src/data/portfolio.ts: profile.avatar -> /images/harsh-photo.jpg.
+- Updated src/app/layout.tsx: favicon icon + new openGraph images entry now use the real photo (also fixes social-share preview).
+- Updated src/components/portfolio/hero.tsx: image dimensions set to 640x640, frame keeps 3:4 portrait ratio via aspect-[3/4] + object-cover object-top (centered crop, face fully visible), alt text changed to "Photo of Harsh Tripathi — B.Tech CSE graduate".
+- Fixed overlap found during browser verification: "Technical SEO" floating badge covered the photo caption; moved it from bottom-left edge (-bottom-5) up the left side (bottom-16) so the caption "Harsh Tripathi / B.Tech CSE · NITRA Technical Campus" is fully readable.
+- bun run lint: clean. Asset check: /images/harsh-photo.jpg -> 200.
+- Agent Browser verification: desktop 1440x900 hero screenshot (photo card with violet glow + badges, caption readable), mobile 390x844 photo card (badges clear of caption), scrolled to page bottom (footer renders correctly). No new runtime errors in dev.log (EADDRINUSE/Fast Refresh entries are historical from earlier session).
+
+Stage Summary:
+- Real photo now powers: hero avatar card, favicon, and OG/social share image.
+- AI-generated harsh-avatar.png remains in public/images but is no longer referenced by the app.
