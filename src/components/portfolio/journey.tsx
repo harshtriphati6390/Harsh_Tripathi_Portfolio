@@ -46,7 +46,7 @@ export function Journey() {
                     className="relative"
                   >
                     <span className="absolute -left-[35px] grid h-8 w-8 place-items-center rounded-full border border-primary/40 bg-background shadow-[0_0_16px_-2px_rgba(139,92,246,0.55)]">
-                      <Icon className="h-4 w-4 text-primary-foreground" aria-hidden="true" />
+                      <Icon className="h-4 w-4 text-primary dark:text-primary-foreground" aria-hidden="true" />
                     </span>
                     <div className="glow-hover rounded-2xl border border-border bg-card/60 p-5">
                       <div className="flex flex-wrap items-center justify-between gap-2">
@@ -55,7 +55,7 @@ export function Journey() {
                           {item.period}
                         </span>
                       </div>
-                      <p className="mt-1 text-sm font-semibold text-primary-foreground">{item.org}</p>
+                      <p className="mt-1 text-sm font-semibold text-primary dark:text-primary-foreground">{item.org}</p>
                       <ul className="mt-3 space-y-1.5">
                         {item.points.map((p) => (
                           <li key={p} className="flex items-start gap-2 text-sm text-muted-foreground">

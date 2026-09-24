@@ -12,9 +12,9 @@ import { Button } from "@/components/ui/button";
 const categories = ["All", "Full-Stack", "Data Analytics", "SEO & Marketing"] as const;
 
 const accentRing = {
-  violet: "ring-primary/40 text-primary-foreground bg-primary/12",
+  violet: "ring-primary/40 text-primary dark:text-primary-foreground bg-primary/12",
   amber: "ring-accent/40 text-accent bg-accent/12",
-  emerald: "ring-emerald-500/40 text-emerald-400 bg-emerald-500/12",
+  emerald: "ring-emerald-500/40 text-emerald-600 dark:text-emerald-400 bg-emerald-500/12",
 } as const;
 
 export function Projects() {
@@ -104,7 +104,7 @@ export function Projects() {
                     {project.tech.map((t) => (
                       <span
                         key={t}
-                        className="rounded-full border border-primary/25 bg-primary/8 px-2.5 py-1 text-[11px] font-semibold text-primary-foreground"
+                        className="rounded-full border border-primary/25 bg-primary/8 px-2.5 py-1 text-[11px] font-semibold text-primary dark:text-primary-foreground"
                       >
                         {t}
                       </span>
@@ -118,7 +118,7 @@ export function Projects() {
                         href={link.href}
                         target={link.href.startsWith("http") ? "_blank" : undefined}
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-foreground/80 transition-colors hover:text-primary-foreground"
+                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-foreground/80 transition-colors hover:text-primary dark:hover:text-primary-foreground"
                       >
                         {link.label === "GitHub" ? (
                           <Github className="h-4 w-4" aria-hidden="true" />
@@ -140,7 +140,7 @@ export function Projects() {
             asChild
             variant="outline"
             size="lg"
-            className="rounded-full border-primary/30 bg-primary/5 px-6 font-semibold hover:bg-primary/15 hover:text-primary-foreground"
+            className="rounded-full border-primary/30 bg-primary/5 px-6 font-semibold hover:bg-primary/15 hover:text-primary dark:hover:text-primary-foreground"
           >
             <a href={profile.github} target="_blank" rel="noopener noreferrer">
               <FolderKanban className="mr-2 h-4 w-4" aria-hidden="true" />

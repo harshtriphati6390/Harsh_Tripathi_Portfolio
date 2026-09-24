@@ -78,7 +78,7 @@ export function Hero() {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="text-center lg:text-left"
           >
-            <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-semibold text-primary-foreground sm:text-sm">
+            <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-semibold text-primary dark:text-primary-foreground sm:text-sm">
               <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse-dot" aria-hidden="true" />
               Open to opportunities · Class of 2026
             </span>
@@ -112,7 +112,7 @@ export function Hero() {
                 asChild
                 size="lg"
                 variant="outline"
-                className="rounded-full border-primary/40 bg-primary/5 px-6 font-semibold text-foreground hover:bg-primary/15 hover:text-primary-foreground"
+                className="rounded-full border-primary/40 bg-primary/5 px-6 font-semibold text-foreground hover:bg-primary/15 hover:text-primary dark:hover:text-primary-foreground"
               >
                 <a href={profile.resumeUrl} download>
                   <Download className="mr-2 h-4 w-4" aria-hidden="true" />
@@ -135,7 +135,7 @@ export function Hero() {
                   target={href.startsWith("http") ? "_blank" : undefined}
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="grid h-11 w-11 place-items-center rounded-full border border-border bg-card/60 text-foreground/80 transition-all hover:-translate-y-1 hover:border-primary/50 hover:text-primary-foreground hover:shadow-[0_8px_24px_-8px_rgba(139,92,246,0.6)]"
+                  className="grid h-11 w-11 place-items-center rounded-full border border-border bg-card/60 text-foreground/80 transition-all hover:-translate-y-1 hover:border-primary/50 hover:text-primary dark:hover:text-primary-foreground hover:shadow-[0_8px_24px_-8px_rgba(139,92,246,0.6)]"
                 >
                   <Icon className="h-5 w-5" aria-hidden="true" />
                 </a>

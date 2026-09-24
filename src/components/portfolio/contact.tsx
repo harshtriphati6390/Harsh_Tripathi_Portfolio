@@ -129,20 +129,20 @@ export function Contact() {
 
             <div className="rounded-2xl border border-primary/25 bg-gradient-to-br from-primary/10 via-card/60 to-accent/10 p-5">
               <div className="flex items-center gap-2.5">
-                <MessageSquareText className="h-5 w-5 text-primary-foreground" aria-hidden="true" />
+                <MessageSquareText className="h-5 w-5 text-primary dark:text-primary-foreground" aria-hidden="true" />
                 <p className="font-display text-sm font-bold sm:text-base">Connect with me</p>
               </div>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                 {profile.openToWork}. Response time is usually under 24 hours.
               </p>
               <div className="mt-4 flex gap-3">
-                <Button asChild variant="outline" size="sm" className="rounded-full border-primary/35 hover:bg-primary/15 hover:text-primary-foreground">
+                <Button asChild variant="outline" size="sm" className="rounded-full border-primary/35 hover:bg-primary/15 hover:text-primary dark:hover:text-primary-foreground">
                   <a href={profile.github} target="_blank" rel="noopener noreferrer">
                     <Github className="mr-1.5 h-4 w-4" aria-hidden="true" />
                     GitHub
                   </a>
                 </Button>
-                <Button asChild variant="outline" size="sm" className="rounded-full border-primary/35 hover:bg-primary/15 hover:text-primary-foreground">
+                <Button asChild variant="outline" size="sm" className="rounded-full border-primary/35 hover:bg-primary/15 hover:text-primary dark:hover:text-primary-foreground">
                   <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">
                     <Linkedin className="mr-1.5 h-4 w-4" aria-hidden="true" />
                     LinkedIn

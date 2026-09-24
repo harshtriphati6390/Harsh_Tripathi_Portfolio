@@ -28,7 +28,7 @@ const iconMap = {
 
 const accentStyles = {
   violet: {
-    icon: "bg-primary/15 text-primary-foreground ring-primary/30",
+    icon: "bg-primary/15 text-primary dark:text-primary-foreground ring-primary/30",
     title: "text-gradient-violet",
   },
   amber: {
@@ -180,7 +180,7 @@ export function About() {
                   Online · {profile.openToWork}
                 </p>
               </div>
-              <span className="grid h-10 w-10 place-items-center rounded-xl bg-primary/15 text-primary-foreground ring-1 ring-primary/30">
+              <span className="grid h-10 w-10 place-items-center rounded-xl bg-primary/15 text-primary dark:text-primary-foreground ring-1 ring-primary/30">
                 <Clock className="h-5 w-5" aria-hidden="true" />
               </span>
             </div>
@@ -189,7 +189,7 @@ export function About() {
             <div className="rounded-2xl border border-primary/25 bg-gradient-to-br from-primary/10 via-card/70 to-accent/10 px-5 py-5">
               {countdown === null || !countdown.done ? (
                 <>
-                  <p className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.25em] text-primary-foreground">
+                  <p className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.25em] text-primary dark:text-primary-foreground">
                     <Clock className="h-4 w-4" aria-hidden="true" />
                     Graduating in
                   </p>
@@ -211,7 +211,7 @@ export function About() {
                 </>
               ) : (
                 <>
-                  <p className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.25em] text-primary-foreground">
+                  <p className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.25em] text-primary dark:text-primary-foreground">
                     <GraduationCap className="h-4 w-4" aria-hidden="true" />
                     Milestone unlocked
                   </p>
@@ -224,7 +224,7 @@ export function About() {
                         May 2026 · NITRA Technical Campus, Ghaziabad
                       </p>
                     </div>
-                    <span className="rounded-full border border-emerald-500/40 bg-emerald-500/10 px-4 py-2 text-xs font-bold text-emerald-400">
+                    <span className="rounded-full border border-emerald-500/40 bg-emerald-500/10 px-4 py-2 text-xs font-bold text-emerald-600 dark:text-emerald-400">
                       Class of 2026
                     </span>
                   </div>

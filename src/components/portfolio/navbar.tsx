@@ -5,6 +5,7 @@ import { Menu, X, Sparkle } from "lucide-react";
 import { navLinks, profile } from "@/data/portfolio";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/portfolio/theme-toggle";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -40,7 +41,7 @@ export function Navbar() {
       className={cn(
         "fixed top-0 inset-x-0 z-50 transition-all duration-300",
         scrolled
-          ? "bg-background/85 backdrop-blur-xl border-b border-border shadow-[0_8px_32px_-16px_rgba(0,0,0,0.6)]"
+          ? "bg-background/85 backdrop-blur-xl border-b border-border shadow-[0_8px_32px_-16px_rgba(0,0,0,0.2)] dark:shadow-[0_8px_32px_-16px_rgba(0,0,0,0.6)]"
           : "bg-transparent border-b border-transparent"
       )}
     >
@@ -75,7 +76,7 @@ export function Navbar() {
                 className={cn(
                   "rounded-full px-4 py-2 text-sm font-medium transition-colors",
                   active === link.href.slice(1)
-                    ? "bg-primary/15 text-primary-foreground ring-1 ring-primary/40"
+                    ? "bg-primary/15 text-primary ring-1 ring-primary/40 dark:text-primary-foreground"
                     : "text-foreground/80 hover:bg-secondary hover:text-foreground"
                 )}
               >
@@ -86,6 +87,9 @@ export function Navbar() {
         </ul>
 
         <div className="flex items-center gap-2">
+          {/* Dark / light theme toggle */}
+          <ThemeToggle />
+
           <Button
             asChild
             className="hidden rounded-full bg-gradient-brand font-semibold text-white shadow-[0_8px_24px_-8px_rgba(139,92,246,0.6)] transition-transform hover:scale-[1.04] sm:inline-flex"
@@ -126,7 +130,7 @@ export function Navbar() {
                 className={cn(
                   "block rounded-xl px-4 py-3 text-sm font-medium",
                   active === link.href.slice(1)
-                    ? "bg-primary/15 text-primary-foreground"
+                    ? "bg-primary/15 text-primary dark:text-primary-foreground"
                     : "text-foreground/80 hover:bg-secondary"
                 )}
               >

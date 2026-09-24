@@ -41,3 +41,23 @@ Work Log:
 Stage Summary:
 - Real photo now powers: hero avatar card, favicon, and OG/social share image.
 - AI-generated harsh-avatar.png remains in public/images but is no longer referenced by the app.
+
+---
+Task ID: 3
+Agent: Z.ai Code (main orchestrator)
+Task: Add a dark/light theme toggle on the top-right of the navbar ("add the also option on top right side of add and light option").
+
+Work Log:
+- Installed approach: next-themes (already in package.json) with attribute="class", defaultTheme="dark", enableSystem={false} — first visit keeps the designed midnight look, user choice persists in localStorage.
+- Created src/components/theme-provider.tsx and wrapped children in src/app/layout.tsx; removed the forced `dark` class from <html> (suppressHydrationWarning already present).
+- Created src/components/portfolio/theme-toggle.tsx: round outline button with Sun/Moon icons swapped purely via `dark:` CSS variants (no hydration flash), aria-label "Toggle dark or light theme".
+- Placed <ThemeToggle /> in navbar.tsx top-right, left of the "Hire Me" button (visible on mobile next to hamburger too); made navbar scrolled shadow lighter in light mode via dark: variant.
+- Restructured src/app/globals.css: `:root` is now a light palette (near-white canvas oklch 0.985, deep violet primary 0.55, amber accent 0.74), `.dark` keeps the midnight palette; added `.dark` overrides for .text-gradient/.text-gradient-violet/.text-gradient-amber (deeper tones on light canvas), .bg-grid line color, and theme-aware scrollbar.
+- Fixed light-mode contrast: all `text-primary-foreground` on violet-tinted chips/badges/hovers across hero, navbar, about, skills, projects, journey, contact, footer → `text-primary dark:text-primary-foreground` (kept as-is inside the always-dark terminal card); emerald accents → `text-emerald-600 dark:text-emerald-400`; footer "Back to top" and nav active pills theme-aware.
+- bun run lint: clean.
+- Agent Browser verification: dark default on load ✓; click toggle → light (html.light, localStorage=light) ✓, persists after reload ✓; light screenshots desktop hero/about/projects/journey/contact/footer + mobile hero all readable ✓; toggle back → dark restored (localStorage=dark), original midnight design intact with moon icon ✓; GET / 200, no new runtime errors in dev.log.
+
+Stage Summary:
+- Portfolio now supports dark (default) + light themes with a one-click toggle at the navbar top-right; choice persists across reloads.
+- Light theme keeps the violet+amber brand via deeper gradient tones; all tinted chips use theme-aware text colors; terminal card intentionally stays dark in both themes.
+- Files touched: globals.css, layout.tsx, navbar.tsx, new theme-provider.tsx + theme-toggle.tsx, hero/about/skills/projects/journey/contact/footer contrast fixes.

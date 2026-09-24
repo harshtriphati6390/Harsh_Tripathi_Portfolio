@@ -39,7 +39,7 @@ export function Footer() {
                   target={href.startsWith("http") ? "_blank" : undefined}
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="grid h-9 w-9 place-items-center rounded-full border border-border text-muted-foreground transition-all hover:-translate-y-0.5 hover:border-primary/50 hover:text-primary-foreground"
+                  className="grid h-9 w-9 place-items-center rounded-full border border-border text-muted-foreground transition-all hover:-translate-y-0.5 hover:border-primary/50 hover:text-primary dark:hover:text-primary-foreground"
                 >
                   <Icon className="h-4 w-4" aria-hidden="true" />
                 </a>
@@ -82,7 +82,7 @@ export function Footer() {
             </ul>
             <a
               href="#home"
-              className="mt-5 inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/8 px-4 py-2 text-xs font-bold text-primary-foreground transition-colors hover:bg-primary/20"
+              className="mt-5 inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/8 px-4 py-2 text-xs font-bold text-primary transition-colors hover:bg-primary/20 dark:text-primary-foreground"
             >
               <ArrowUp className="h-3.5 w-3.5" aria-hidden="true" />
               Back to top

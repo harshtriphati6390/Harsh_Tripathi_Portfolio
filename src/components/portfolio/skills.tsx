@@ -22,12 +22,12 @@ const iconMap = {
 } as const;
 
 const accents = [
-  "text-primary-foreground bg-primary/15 ring-primary/30",
+  "text-primary dark:text-primary-foreground bg-primary/15 ring-primary/30",
   "text-accent bg-accent/15 ring-accent/30",
-  "text-emerald-400 bg-emerald-500/15 ring-emerald-500/30",
-  "text-primary-foreground bg-primary/15 ring-primary/30",
+  "text-emerald-600 dark:text-emerald-400 bg-emerald-500/15 ring-emerald-500/30",
+  "text-primary dark:text-primary-foreground bg-primary/15 ring-primary/30",
   "text-accent bg-accent/15 ring-accent/30",
-  "text-emerald-400 bg-emerald-500/15 ring-emerald-500/30",
+  "text-emerald-600 dark:text-emerald-400 bg-emerald-500/15 ring-emerald-500/30",
 ];
 
 export function Skills() {
