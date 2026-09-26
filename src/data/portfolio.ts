@@ -221,6 +221,27 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    id: "bugflow",
+    title: "BugFlow — Defect Lifecycle & QA Triage Platform",
+    category: "Full-Stack",
+    period: "2026",
+    image: "/images/project-taskflow.png",
+    description:
+      "An enterprise defect lifecycle management system simulating the full QA/Dev triage pipeline: Bug Discovery → Severity/Priority Matrix → Dev Assignment → Root Cause & Code Fix → PR & Code Review → QA Retest (Pass/Fail Branch) → Verified & Closed.",
+    bullets: [
+      "Interactive defect lifecycle flowchart with real-time state synchronization and branching decision logic",
+      "Full QA Triage Hub: steps to reproduce, actual vs expected, attachments, browser & device environment",
+      "End-to-end developer fix & code review workflow with simulated git diffs, unit test validation, and PR approval",
+      "Live KPI metrics dashboard tracking Total, Open, In Progress, Resolved, Closed, Critical, High, Medium, Low",
+    ],
+    tech: ["Next.js 16", "TypeScript", "Tailwind CSS", "Framer Motion", "SDLC Lifecycle", "QA Engineering"],
+    accent: "violet",
+    links: [
+      { label: "Live Interactive App", href: "/bug-tracker" },
+      { label: "GitHub", href: "https://github.com/harshtriphati6390/Harsh_Tripathi_Portfolio" },
+    ],
+  },
+  {
     id: "taskflow",
     title: "TaskFlow — Full-Stack Task Manager",
     category: "Full-Stack",

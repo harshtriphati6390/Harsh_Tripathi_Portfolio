@@ -7,6 +7,8 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/portfolio/theme-toggle";
 
+import Link from "next/link";
+
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -87,6 +89,14 @@ export function Navbar() {
         </ul>
 
         <div className="flex items-center gap-2">
+          <Link
+            href="/bug-tracker"
+            className="hidden sm:inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/10 px-3.5 py-1.5 text-xs font-semibold text-primary hover:bg-primary hover:text-primary-foreground transition-all shadow-sm"
+          >
+            <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+            <span>Bug Tracker App</span>
+          </Link>
+
           {/* Dark / light theme toggle */}
           <ThemeToggle />
 
@@ -138,6 +148,21 @@ export function Navbar() {
               </a>
             </li>
           ))}
+          <li className="pt-2">
+            <Link
+              href="/bug-tracker"
+              onClick={() => setOpen(false)}
+              className="flex items-center justify-between rounded-xl border border-primary/30 bg-primary/10 px-4 py-3 text-sm font-semibold text-primary"
+            >
+              <div className="flex items-center gap-2">
+                <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+                <span>Bug Lifecycle App</span>
+              </div>
+              <span className="rounded-full bg-primary/20 px-2 py-0.5 text-xs font-bold">
+                Live Demo →
+              </span>
+            </Link>
+          </li>
           <li>
             <a
               href="#contact"
