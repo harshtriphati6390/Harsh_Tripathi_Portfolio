@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     description:
       "CS graduate building across the whole stack — web apps, data analytics and SEO.",
     type: "website",
-    images: [{ url: "/images/harsh-photo.jpg", width: 640, height: 640, alt: "Harsh Tripathi" }],
+    images: [{ url: "/images/harsh-photo.jpg", width: 784, height: 1024, alt: "Harsh Tripathi" }],
   },
 };
 

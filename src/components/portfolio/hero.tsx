@@ -159,8 +159,8 @@ export function Hero() {
               <Image
                 src={profile.avatar}
                 alt="Photo of Harsh Tripathi — B.Tech CSE graduate"
-                width={640}
-                height={640}
+                width={784}
+                height={1024}
                 priority
                 className="aspect-[3/4] w-full object-cover object-top"
               />
