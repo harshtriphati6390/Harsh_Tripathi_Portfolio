@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   Code2,
@@ -9,6 +10,8 @@ import {
   CheckCircle2,
   Clock,
   GraduationCap,
+  MapPin,
+  Sparkles,
 } from "lucide-react";
 import {
   aboutParagraphs,
@@ -119,13 +122,62 @@ export function About() {
         />
 
         <div className="mt-14 grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
-          {/* Left column: paragraphs + highlights */}
+          {/* Left column: profile card + paragraphs + highlights */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.55 }}
           >
+            {/* Harsh Profile Card */}
+            <div className="mb-6 flex flex-col sm:flex-row items-center sm:items-start gap-5 rounded-2xl border border-primary/20 bg-gradient-to-br from-card/90 via-card/50 to-primary/5 p-5 shadow-lg backdrop-blur">
+              <div className="relative shrink-0">
+                <div className="relative h-24 w-24 sm:h-28 sm:w-28 overflow-hidden rounded-2xl border-2 border-primary/30 shadow-md">
+                  <Image
+                    src={profile.avatar}
+                    alt={`${profile.name} portrait`}
+                    width={256}
+                    height={256}
+                    className="h-full w-full object-cover object-top"
+                  />
+                </div>
+                <span
+                  className="absolute -bottom-1 -right-1 flex h-6 w-6 items-center justify-center rounded-full bg-background border border-border shadow-sm"
+                  title="Available for opportunities"
+                >
+                  <span className="h-2.5 w-2.5 rounded-full bg-emerald-500 animate-pulse" />
+                </span>
+              </div>
+              <div className="text-center sm:text-left flex-1 min-w-0">
+                <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2">
+                  <h3 className="font-display text-xl sm:text-2xl font-extrabold text-foreground">
+                    Harsh <span className="text-gradient">Tripathi</span>
+                  </h3>
+                  <span className="rounded-full border border-primary/30 bg-primary/10 px-2.5 py-0.5 text-xs font-semibold text-primary dark:text-primary-foreground">
+                    Class of 2026
+                  </span>
+                </div>
+                <p className="mt-1 text-sm font-medium text-foreground/80">
+                  Full-Stack Developer · Data Analyst · SEO Specialist
+                </p>
+                <p className="mt-1 flex items-center justify-center sm:justify-start gap-1 text-xs text-muted-foreground">
+                  <MapPin className="h-3.5 w-3.5 text-accent shrink-0" aria-hidden="true" />
+                  <span>NITRA Technical Campus · Noida, UP, India</span>
+                </p>
+                <div className="mt-3 flex flex-wrap items-center justify-center sm:justify-start gap-2">
+                  <span className="inline-flex items-center gap-1 rounded-lg border border-border bg-background/60 px-2.5 py-1 text-xs font-medium text-muted-foreground">
+                    <Sparkles className="h-3 w-3 text-primary" /> React &amp; Node.js
+                  </span>
+                  <span className="inline-flex items-center gap-1 rounded-lg border border-border bg-background/60 px-2.5 py-1 text-xs font-medium text-muted-foreground">
+                    <Sparkles className="h-3 w-3 text-accent" /> Power BI &amp; SQL
+                  </span>
+                  <span className="inline-flex items-center gap-1 rounded-lg border border-border bg-background/60 px-2.5 py-1 text-xs font-medium text-muted-foreground">
+                    <Sparkles className="h-3 w-3 text-emerald-400" /> Technical SEO
+                  </span>
+                </div>
+              </div>
+            </div>
+
             {aboutParagraphs.map((p, i) => (
               <p key={i} className="mb-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
                 {p}
