@@ -5,7 +5,6 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
-  Download,
   Github,
   Linkedin,
   Mail,
@@ -17,11 +16,16 @@ import {
 } from "lucide-react";
 import { profile, stats, tickerItems } from "@/data/portfolio";
 import { Button } from "@/components/ui/button";
+import { ResumeDownloadMenu } from "./resume-download-menu";
 
 type TypeState = { index: number; text: string; deleting: boolean };
 
 function useTypewriter(words: readonly string[], speed = 75, pause = 1600) {
-  const [state, setState] = useState<TypeState>({ index: 0, text: "", deleting: false });
+  const [state, setState] = useState<TypeState>({
+    index: 0,
+    text: words[0] || "Full-Stack Developer",
+    deleting: false,
+  });
 
   useEffect(() => {
     const { index, text, deleting } = state;
@@ -32,9 +36,10 @@ function useTypewriter(words: readonly string[], speed = 75, pause = 1600) {
       // Finished typing — pause, then start deleting
       timeout = setTimeout(() => setState((s) => ({ ...s, deleting: true })), pause);
     } else if (deleting && text === "") {
-      // Finished deleting — move to the next word
+      // Finished deleting — move to the next word immediately with 1st char
+      const nextIndex = (index + 1) % words.length;
       timeout = setTimeout(
-        () => setState((s) => ({ ...s, deleting: false, index: (s.index + 1) % words.length })),
+        () => setState({ deleting: false, index: nextIndex, text: words[nextIndex].slice(0, 1) }),
         speed
       );
     } else {
@@ -108,17 +113,7 @@ export function Hero() {
                   <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
                 </a>
               </Button>
-              <Button
-                asChild
-                size="lg"
-                variant="outline"
-                className="rounded-full border-primary/40 bg-primary/5 px-6 font-semibold text-foreground hover:bg-primary/15 hover:text-primary dark:hover:text-primary-foreground"
-              >
-                <a href={profile.resumeUrl} download>
-                  <Download className="mr-2 h-4 w-4" aria-hidden="true" />
-                  Download Resume
-                </a>
-              </Button>
+              <ResumeDownloadMenu />
             </div>
 
             {/* Socials */}

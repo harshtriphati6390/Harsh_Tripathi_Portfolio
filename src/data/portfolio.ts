@@ -14,6 +14,7 @@ export const profile = {
     "Data Analyst",
     "SEO Specialist",
     "Software Developer",
+    "Data Scientist",
   ],
   tagline: "I build across the whole stack — from React frontends and Node.js APIs to Power BI dashboards and search-ready websites.",
   location: "Noida, Uttar Pradesh, India",
@@ -25,6 +26,76 @@ export const profile = {
   resumeUrl: "/resume/Harsh_Tripathi_Resume.pdf",
   openToWork: "Open to Software Developer, Data Analyst & SEO roles",
 } as const;
+
+export type ResumeOption = {
+  id: string;
+  title: string;
+  role: string;
+  subtitle: string;
+  badge: string;
+  badgeColor: string;
+  filename: string;
+  url: string;
+  icon: "chart" | "search" | "sparkles" | "code" | "file";
+};
+
+export const resumes: ResumeOption[] = [
+  {
+    id: "data-analytics",
+    title: "Data Analytics Resume",
+    role: "Data Analyst",
+    subtitle: "SQL · Power BI · DAX · EDA · Data Visualization",
+    badge: "Analytics",
+    badgeColor: "bg-amber-500/15 text-amber-500 dark:text-amber-400 border-amber-500/30",
+    filename: "Harsh_Tripathi_Data_Analytics_Resume.pdf",
+    url: "/resume/Harsh_Tripathi_Data_Analytics_Resume.pdf",
+    icon: "chart",
+  },
+  {
+    id: "seo-intern",
+    title: "SEO Specialist / Intern Resume",
+    role: "SEO & Growth",
+    subtitle: "Technical SEO · Google Search Console · GA4 · Audits",
+    badge: "SEO Intern",
+    badgeColor: "bg-emerald-500/15 text-emerald-500 dark:text-emerald-400 border-emerald-500/30",
+    filename: "Harsh_Tripathi_SEO_Specialist_Resume.pdf",
+    url: "/resume/Harsh_Tripathi_SEO_Specialist_Resume.pdf",
+    icon: "search",
+  },
+  {
+    id: "data-science",
+    title: "Data Science Resume",
+    role: "Data Scientist",
+    subtitle: "Python · Machine Learning · Scikit-learn · FastAPI",
+    badge: "Data Science",
+    badgeColor: "bg-purple-500/15 text-purple-500 dark:text-purple-400 border-purple-500/30",
+    filename: "Harsh_Tripathi_Data_Science_Resume.pdf",
+    url: "/resume/Harsh_Tripathi_Data_Science_Resume.pdf",
+    icon: "sparkles",
+  },
+  {
+    id: "software-developer",
+    title: "Software Developer Resume",
+    role: "Software Engineer",
+    subtitle: "JavaScript (ES6+) · REST APIs · SQL · Problem Solving",
+    badge: "Software Dev",
+    badgeColor: "bg-blue-500/15 text-blue-500 dark:text-blue-400 border-blue-500/30",
+    filename: "Harsh_Tripathi_Software_Developer_Resume.pdf",
+    url: "/resume/Harsh_Tripathi_Software_Developer_Resume.pdf",
+    icon: "code",
+  },
+  {
+    id: "full-stack",
+    title: "Full-Stack Developer Resume",
+    role: "Full-Stack Dev",
+    subtitle: "React.js · Node.js · Express · MySQL · Full Loop",
+    badge: "Full-Stack",
+    badgeColor: "bg-primary/15 text-primary dark:text-primary-foreground border-primary/30",
+    filename: "Harsh_Tripathi_Full_Stack_Resume.pdf",
+    url: "/resume/Harsh_Tripathi_Full_Stack_Resume.pdf",
+    icon: "code",
+  },
+];
 
 export const stats = [
   { value: "B.Tech", label: "CSE Graduate 2026" },
